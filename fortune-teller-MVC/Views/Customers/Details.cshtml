@@ -1,0 +1,17 @@
+﻿@model fortune_teller_MVC.Models.Customer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Customer</h4>
+    <hr />
+    @Model.FirstName @Model.LastName will retire in @ViewBag.NumberofYears years with [Amount of Money] in the bank, a vacation home in [Location] and a [Mode of Transportation].
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CustomerID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
