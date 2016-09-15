@@ -48,20 +48,44 @@ namespace fortune_teller_MVC.Controllers
             //Sibling Rivalry
             if(customer.SiblingID == 1)
             {
-
+                ViewBag.locale = "Tropical Island Paradise";
             }
             else if(customer.SiblingID == 2)
             {
-
+                ViewBag.locale = "a Haunted Mansion";
             }
             else if(customer.SiblingID == 3)
             {
-
+                ViewBag.locale = "a Castle";
             }
             else
-            { }
+            {
+                ViewBag.locale = "a Space Shuttle";
+            }
 
-                
+
+            //Bank Account
+            var firstLetter = customer.BirthMonth.MonthName[0];
+            var secondLetter = customer.BirthMonth.MonthName[1];
+            var thirdLetter = customer.BirthMonth.MonthName[2];
+            string fullName = customer.FirstName + customer.LastName;
+
+            if(fullName.Contains(firstLetter))
+            {
+                ViewBag.AmtofMulah = 300000;
+            }
+            else if(fullName.Contains(secondLetter))
+            {
+                ViewBag.AmtofMulah = 25000;
+            }
+            else if(fullName.Contains(thirdLetter))
+            {
+                ViewBag.AmtofMulah = 1500;
+            }
+            else
+            {
+                ViewBag.AmtofMulah = 300;
+            }
 
 
 
@@ -90,7 +114,7 @@ namespace fortune_teller_MVC.Controllers
             {
                 db.Customers.Add(customer);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details", new { id = customer.CustomerID });
             }
 
             ViewBag.BirthMonthID = new SelectList(db.BirthMonths, "BirthMonthID", "MonthName", customer.BirthMonthID);
