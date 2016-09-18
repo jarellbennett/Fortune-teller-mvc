@@ -9,7 +9,7 @@
 <div>
     <h4>Customer</h4>
     <hr />
-    @Model.FirstName @Model.LastName will retire in @ViewBag.NumberofYears years with $ @ViewBag.AmtofMulah in the bank, a vacation home in @ViewBag.locale and a [Mode of Transportation].
+    @Model.FirstName @Model.LastName will retire in @ViewBag.NumberofYears years with $ @ViewBag.AmtofMulah in the bank, a vacation home in @ViewBag.locale and a @ViewBag.transport
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.CustomerID }) |

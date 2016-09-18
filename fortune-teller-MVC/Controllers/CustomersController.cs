@@ -88,6 +88,39 @@ namespace fortune_teller_MVC.Controllers
             }
 
 
+            //Transportation
+
+            if(customer.ColorID == 1)
+            {
+                ViewBag.transport = "Porsche";
+            }
+            else if (customer.ColorID == 2)
+            {
+                ViewBag.transport = "Speed Boat";
+            }
+            else if (customer.ColorID == 3)
+            {
+                ViewBag.transport = "Magic School Bus";
+            }
+            else if (customer.ColorID == 4)
+            {
+                ViewBag.transport = "Tank";
+            }
+            else if (customer.ColorID == 5)
+            {
+                ViewBag.transport = "Submarine";
+            }
+            else if (customer.ColorID == 6)
+            {
+                ViewBag.transport = "Dragon";
+            }
+            else 
+            {
+                ViewBag.transport = "Space Ship";
+            }
+
+
+
 
 
 
